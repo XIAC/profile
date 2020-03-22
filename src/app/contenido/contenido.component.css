@@ -1,0 +1,52 @@
+.contenido {
+    margin: 0 auto;
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+}
+
+ul {}
+
+h1,
+h3,
+h2 {
+    text-align: center;
+}
+
+input {
+    width: 250px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: black 2px 2px 5px;
+}
+
+.formulario {
+    width: 50%;
+    float: right;
+}
+
+.imagen {
+    width: 50%;
+    float: left;
+}
+
+.correo {
+    float: left;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 5px;
+    font-size: medium;
+    padding: 5px;
+    float: right;
+    width: 250px;
+}
+
+.lista {
+    float: left;
+    width: 100%;
+}

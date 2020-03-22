@@ -1,0 +1,41 @@
+<h3>persona works!</h3>
+<p>Nombre:</p><br>
+<input class="form-control" type="text" [(ngModel)]="personaEntidad.Nombre"><br> {{nombre}}
+<p>Apellido</p><br>
+<input class="form-control" type="text" [(ngModel)]="personaEntidad.Apellido">
+<div class="row">
+    <div class="col-md-7">
+        <p>Numero</p><br>
+        <input class="form-control" type="text" [(ngModel)]="personaEntidad.Numero">
+    </div>
+    <div class="col-md-5" style="margin-top: 45px;">
+
+        <div class="dropdown" dropdown [dropdownToggle]="false" (onOpen)="abierto()" (onClose)="cerrado()">
+            <button class="btn btn-primary" dropdown-open>Paises</button>
+            <ul class="dropdown-menu" *ngFor="let pais of listaPaises">
+                <li><a>{{pais.Nombre}}</a></li>
+                <!-- <li><a>Sadman</a></li>
+                <li><a>Lieman</a></li> -->
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- <p>Pais</p><br>
+<input class="form-control" type="text" [(ngModel)]="personaEntidad.Pais"> -->
+
+
+<br>
+<button class="btn btn-primary" (click)="guardar()">Save</button>
+<br>
+<ul *ngFor="let personita of listaPersonas">
+    <li [ngStyle]="{'color':getColor(personita.Direccion) }">Nombre: {{personita.Nombre}}</li>
+    <p>*******</p>
+
+</ul>
+<br>
+<div class="progress">
+    <div class="progress-bar" role="progressbar" [ngStyle]="{'width': porcentaje+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
