@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { PersonaComponent } from './persona/persona.component';
 
 @Component({
   selector: 'app-ximena',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'profile';
   test: string;
+  @ViewChild(PersonaComponent, {static: false}) personacomponent : PersonaComponent;
 
   /**
    *
@@ -15,8 +17,9 @@ export class AppComponent {
   constructor() {
     // this.test= "";
   }
-  Guardar() {
+  guardar() {
     // console.log("este boton guarda");
-    console.log();
+    console.log("este boton es de app component");
+    console.log(this.personacomponent.retornarPerson());
   }
 }

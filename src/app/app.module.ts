@@ -7,13 +7,17 @@ import { ContenidoComponent } from './contenido/contenido.component';
 import { PersonaComponent } from './persona/persona.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DropdownModule } from 'ngx-dropdown';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContenidoComponent,
     PersonaComponent,
-    ContactoComponent
+    ContactoComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -35,8 +35,8 @@ export class PersonaComponent implements OnInit {
     this.listaPaises.push(paisP);
 
     const paisC = new Pais();
-    paisC.Nombre = "Bolivia";
-    paisC.Color = "Verde";
+    paisC.Nombre = "Argentina";
+    paisC.Color = "Azul";
     paisC.Capital = "Sucre";
 
     this.listaPaises.push(paisC);
@@ -69,7 +69,16 @@ export class PersonaComponent implements OnInit {
         return 'green';
       case 'Peru':
         return 'red';
+      case 'Argentina':
+        return 'blue';
     }
-
   }
+  capturarPais(rspuesta: string){
+    console.log(rspuesta);
+    this.personaEntidad.Pais = rspuesta;
+  }
+  retornarPerson() : Persona{
+    return this.personaEntidad;
+  }
+
 }
