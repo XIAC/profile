@@ -3,10 +3,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Pais } from './shared/pais.model';
 // import { Persona } from '../contenido/shared/persona.model';
 import {DropdownModule} from "ngx-dropdown";
+import { PersonaService } from './shared/persona.service';
 @Component({
   selector: 'app-persona',
   templateUrl: './persona.component.html',
-  styleUrls: ['./persona.component.css']
+  styleUrls: ['./persona.component.css'],
+  providers: [PersonaService]
 })
 export class PersonaComponent implements OnInit {
   // @Input() nombre: string ;
@@ -15,7 +17,8 @@ export class PersonaComponent implements OnInit {
   listaPersonas: Persona [];
   listaPaises: Pais [];
   porcentaje: number;
-  constructor() {
+  datoList: any[] = [];
+  constructor(public personaServicio: PersonaService) {
     this.personaEntidad = new Persona();
     this.listaPersonas = [];
     this.listaPaises = [];
@@ -45,6 +48,13 @@ export class PersonaComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.personaServicio.getCovidMundial().subscribe(
+      dato => this.cargarDatos(dato)
+    );
+  }
+  cargarDatos(dato){
+    this.datoList = dato;
+    console.log(this.datoList);
   }
   // seleccionado(event){
   //       console.log(event);

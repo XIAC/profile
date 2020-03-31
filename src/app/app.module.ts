@@ -9,6 +9,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { DropdownModule } from 'ngx-dropdown';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DestacarpalabraDirective } from './recursos/destacarpalabra.directive';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { FooterComponent } from './footer/footer.component';
     PersonaComponent,
     ContactoComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DestacarpalabraDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    DropdownModule
+    DropdownModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
